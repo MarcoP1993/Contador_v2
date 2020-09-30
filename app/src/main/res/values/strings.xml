@@ -3,4 +3,6 @@
     <string name="bt_toast">Toast</string>
     <string name="bt_count">count</string>
     <string name="txt_count">0</string>
+    <string name="txt_llevas100">LLevas 100!</string>
+    <string name="txt_saludo">Hola a todos</string>
 </resources>
