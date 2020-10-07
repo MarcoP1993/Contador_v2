@@ -41,7 +41,7 @@
         android:gravity="center"
         android:text="@string/txt_count"
         android:textColor="@android:color/black"
-        android:textSize="200sp"
+        android:textSize="120sp"
         app:layout_constraintBottom_toTopOf="@+id/bt_count"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
