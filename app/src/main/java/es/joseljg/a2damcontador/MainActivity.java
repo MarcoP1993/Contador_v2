@@ -1,5 +1,6 @@
 package es.joseljg.a2damcontador;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -9,6 +10,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final String EXTRA_CONTADOR = "contador";
     private TextView txt_contador = null;
     private int cont;
     // esto es un comentario
@@ -18,6 +20,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         txt_contador = (TextView) findViewById(R.id.txt_contador);
         cont = 0;
+        if(savedInstanceState !=null){
+            cont = savedInstanceState.getInt(EXTRA_CONTADOR);
+            txt_contador.setText(String.valueOf(cont));
+        }
     }
 
     public void incrementarContador(View view) {
@@ -34,5 +40,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void mostrarMensaje(View view) {
         Toast.makeText(this,R.string.txt_saludo,Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt(EXTRA_CONTADOR, cont);
     }
 }
